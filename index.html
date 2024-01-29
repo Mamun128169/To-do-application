@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do Application</title>
+  <!-- Include Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/5544c6582b.js" crossorigin="anonymous"></script>
+  <!-- js script -->
+  <script defer src="./app.js"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-500 to-blue-400">
+  <div class="flex justify-center items-center min-h-screen">
+    <div class="bg-white w-[90%] max-w-[605px] rounded-lg px-7 py-8">
+      <div class="flex items-center gap-3 mb-7">
+        <h2 class="text-3xl font-semibold">To-Do List</h2>
+        <img class="w-10" src="./images/icon.png" alt="list-icon" />
+      </div>
+      <div 
+      class="bg-slate-200 rounded-[30px] flex justify-between mb-5">
+        <input id="input-box" class="bg-transparent pl-3 py-3 rounded-[30px] border-none outline-none text-lg text-slate-800 font-medium" type="text" placeholder="Add your text" spellcheck="false" />
+        <button id="add-btn" class="bg-orange-600 text-white px-10 text-lg rounded-[30px]">Add</button>
+      </div>
+      <ul id="list-container">
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
