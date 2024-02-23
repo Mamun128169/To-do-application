@@ -8,11 +8,10 @@ addBtn.addEventListener("click", () => {
     } else {
         let liElem = document.createElement("li");
         liElem.innerText = inputBox.value;
-        listContainer.appendChild(liElem);
-
         let span = document.createElement("span");
         span.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-        liElem.appendChild(span);
+        listContainer.appendChild(liElem).appendChild(span);
+
     }
     inputBox.value = "";
     saveData();
@@ -30,14 +29,18 @@ listContainer.addEventListener("click", (e) => {
     }
 }, false);
 
+
+// save data to Local Storage
 function saveData() {
     localStorage.setItem("list", listContainer.innerHTML);
 } 
 
+//  Load the saved data from Local Storage to the List Container on page load
 (function() {
     if (localStorage.getItem("list") == null) {
         localStorage.clear();
+    } else {
+        let storedData = localStorage.getItem("list");
+        listContainer.innerHTML = storedData;
     }
-    let storedData = localStorage.getItem("list");
-    listContainer.innerHTML = storedData;
 })();
